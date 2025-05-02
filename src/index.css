@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+.font-orox {
+  font-family: 'Orbitron', sans-serif;
+}
+
+.circle-bg {
+  position: absolute;
+  top: 50%;
+  right: -350px;
+  transform: translateY(-50%);
+  width: 900px;
+  height: 900px;
+  overflow: visible;
+  pointer-events: none;
+  user-select: none;
+  clip-path: inset(0 450px 0 0);
+  z-index: 0; /* behind image */
+}
+
+.circle-bg circle {
+  stroke-width: 2;
+  stroke: #d1d5db;
+}
+
+.image-container {
+  position: relative;
+  margin-left: auto;
+  width: 600px;
+  transform: translateY(-10%) rotate(15deg);
+  border-radius: 24px;
+  overflow: visible;
+  z-index: 10; /* above circles */
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 24px;
+  display: block;
+}
+
+footer {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  margin-top: 0 !important;
+  z-index: 20;
+}
+
+footer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  position: relative;
+  z-index: 20;
+}
