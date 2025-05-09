@@ -1,4 +1,6 @@
 import React from 'react';
+import SecondPage from './SecondPage';
+import ThirdPage from './ThirdPage';
 
 function App() {
   return (
@@ -6,19 +8,23 @@ function App() {
       <header
         className="border-b border-gray-200 bg-white"
         style={{
-          maxWidth: '1440px',
+          width: '100%',
           height: '88px',
           paddingLeft: '80px',
           paddingRight: '80px',
-          gap: '80px',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
           margin: 0,
+          position: 'relative',
+          zIndex: 20,
         }}
       >
-        <nav className="flex items-center justify-between w-full">
-          <div className="flex items-center space-x-3">
+        <nav
+          className="flex items-center justify-between w-full max-w-[1440px]"
+          style={{ gap: '40px' }}
+        >
+          <div className="flex items-center justify-start" style={{ flex: '1 1 0' }}>
             <img
               alt="OROX logo, circular emblem with stylized O and X in navy blue on white background"
               height={40}
@@ -27,7 +33,10 @@ function App() {
               width={238}
             />
           </div>
-          <ul className="hidden md:flex items-center space-x-8 text-sm font-normal text-black">
+          <ul
+            className="hidden md:flex items-center space-x-8 text-sm font-normal text-black"
+            style={{ flex: '1 1 0', justifyContent: 'center' }}
+          >
             <li className="relative group cursor-pointer">
               <button className="flex items-center space-x-1">
                 <span>Products</span>
@@ -63,7 +72,7 @@ function App() {
               </a>
             </li>
           </ul>
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden md:flex items-center space-x-4 justify-end" style={{ flex: '1 1 0' }}>
             <button className="text-[#1f2a4c] border border-[#1f2a4c] rounded-full px-4 py-1.5 text-sm font-semibold hover:bg-[#1f2a4c] hover:text-white transition">
               Log in
             </button>
@@ -78,48 +87,28 @@ function App() {
               <i className="fas fa-qrcode fa-lg" />
             </button>
           </div>
-          <div className="md:hidden">
-            <button aria-label="Open menu" className="text-[#1f2a4c]">
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={2}
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M4 6h16M4 12h16M4 18h16"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </button>
-          </div>
         </nav>
       </header>
       <main
         className="mx-auto"
         style={{
           maxWidth: '1440px',
-          height: '803px',
           padding: '88px 80px',
           gap: '80px',
           display: 'flex',
-          justifyContent: 'space-between',
+          flexDirection: 'row',
           position: 'relative',
           zIndex: 10,
         }}
       >
         <section
-          className="max-w-xl lg:max-w-lg"
+          className="max-w-full"
           style={{
-            width: '1300px',
-            height: '627px',
             gap: '10px',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'flex-start',
+            width: '50%',
           }}
         >
           <h1
@@ -175,11 +164,11 @@ function App() {
         <section
           className="relative"
           style={{
-            width: '750px',
-            height: '750px',
+            width: '50%',
             borderRadius: '24px',
             overflow: 'visible',
             zIndex: 10,
+            marginTop: 0,
           }}
         >
           <svg
@@ -210,7 +199,8 @@ function App() {
             style={{
               position: 'relative',
               marginLeft: 'auto',
-              width: '600px',
+              width: '100%',
+              maxWidth: '600px',
               transform: 'translateY(-10%) rotate(15deg)',
               borderRadius: '24px',
               overflow: 'visible',
@@ -231,6 +221,18 @@ function App() {
           style={{ width: '100%', height: '200px', display: 'block' }}
         />
       </footer>
+      <div
+        style={{
+          maxWidth: '1440px',
+          margin: '0 auto',
+          padding: '40px 80px',
+          position: 'relative',
+          zIndex: 10,
+        }}
+      >
+        <SecondPage />
+        <ThirdPage />
+      </div>
     </>
   );
 }

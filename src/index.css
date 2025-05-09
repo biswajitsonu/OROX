@@ -22,7 +22,7 @@ body {
   pointer-events: none;
   user-select: none;
   clip-path: inset(0 450px 0 0);
-  z-index: 0; /* behind image */
+  z-index: 0; 
 }
 
 .circle-bg circle {
@@ -37,7 +37,7 @@ body {
   transform: translateY(-10%) rotate(15deg);
   border-radius: 24px;
   overflow: visible;
-  z-index: 10; /* above circles */
+  z-index: 10; 
 }
 
 .image-container img {
